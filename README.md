@@ -1,6 +1,6 @@
 # Hangman (Tkinter GUI)
 
-A simple graphical Hangman game built with Python and Tkinter. A solid improvement on the old CLI hangman design    
+A simple graphical Hangman game built with Python and Tkinter.  
 The player guesses letters to reveal a hidden word while a hangman is drawn for each wrong guess.
 
 ## Features
@@ -34,28 +34,32 @@ The player guesses letters to reveal a hidden word while a hangman is drawn for 
   - The hangman drawing
   - The input field
 
-## File Overview
+## Project Structure
+
+The project directory is named `Hangman` and contains:
 
 - `main.py`  
-  - Sets up the `Window` and Tkinter UI
-  - Chooses the random word
-  - Handles game logic (`process_guess`, `reset_game`, `display_man`)
+  Entry point. Sets up the `Window` and Tkinter UI, chooses the random word, and handles core game logic (`process_guess`, `reset_game`, `display_man`).
 
 - `image.py`  
+  Drawing and window abstractions:
   - `Window`: wraps a Tk root and canvas, plus a simple game loop
   - `Point`: represents an (x, y) coordinate
   - `Line`: draws lines on the canvas
   - `Circle`: draws circles (used for the hangman head)
 
 - `Guess_input.py`  
-  - `GuessInput` class
-  - Handles:
-    - The text entry for guesses
-    - The “Guess” button
-    - Enabling/disabling input when the game ends
+  Input widget for guesses:
+  - `GuessInput` class: manages the guess entry box, “Guess” button, Enter-key binding, and enabling/disabling input.
 
 - `wordlist.py`  
-  - Contains `words`, a list of possible secret words for the game.
+  Contains `words`, a list of possible secret words for the game.
+
+- `README.md`  
+  This documentation file.
+
+- `__pycache__/`  
+  Automatically generated Python bytecode cache (can be ignored).
 
 ## Requirements
 
@@ -64,11 +68,19 @@ The player guesses letters to reveal a hidden word while a hangman is drawn for 
 
 ## How to Run
 
-1. Make sure all the files (`main.py`, `image.py`, `Guess_input.py`, `wordlist.py`) are in the same directory.
-2. Install Python 3 if you haven’t already.
+1. Open a terminal in the `Hangman` directory (the one containing `main.py`).
+2. Make sure Python 3 is installed.
 3. Run:
 
    ```bash
    python3 main.py
+4. A window titled "Hangman" will open and you can start guessing letters.
 
-   
+
+## Possible Improvements
+
+- Display a list of letters that have already been guessed.
+- Add more visual feedback (e.g., colors or animations).
+- Add difficulty levels with different word lists.
+- Limit the allowed characters more clearly and show error messages for invalid input.
+- Track and display a score across multiple games.
